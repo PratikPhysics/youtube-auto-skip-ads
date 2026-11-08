@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Auto Skip Ads",
+  "version": "1.2.0",
+  "description": "Automatically clicks the 'Skip' button on YouTube ads as soon as it appears. Created by Pratik Ramteke.",
+  "homepage_url": "https://pratikphysics.netlify.app/",
+  "permissions": ["debugger"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*", "https://m.youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
